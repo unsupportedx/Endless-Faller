@@ -37,11 +37,7 @@ jobs:
           print("Done!")
           EOF
       - run: cd MyApp && cordova build android
-      - uses: actions/upload-artifact@v4
-        with:
-          name: Endless-Faller
-          path: MyApp/platforms/android/app/build/outputs/apk/debug/app-debug.apk
-name: Create Release
+      - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: v1.0
